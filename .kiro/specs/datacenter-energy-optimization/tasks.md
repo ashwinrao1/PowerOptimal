@@ -185,14 +185,14 @@
   - Support time range selection for zooming into specific periods
   - _Requirements: 10.3_
 
-- [-] 21. Create cost breakdown visualizations
+- [x] 21. Create cost breakdown visualizations
   - Create visualization/cost_viz.py with plot_cost_breakdown() function
   - Implement waterfall chart showing CAPEX and OPEX components
   - Break down costs by technology: grid CAPEX/OPEX, gas CAPEX/OPEX, battery CAPEX/OPEX, solar CAPEX/OPEX
   - Show total NPV and annual costs
   - _Requirements: 10.4_
 
-- [ ] 22. Create Pareto frontier plots
+- [x] 22. Create Pareto frontier plots
   - Create visualization/pareto_viz.py with plot_pareto_frontier() function
   - Implement scatter plot with two objectives on x and y axes
   - Highlight Pareto-optimal solutions with different color/marker
@@ -200,7 +200,7 @@
   - Support multiple objective pairs
   - _Requirements: 9.4_
 
-- [ ] 23. Create reliability analysis visualizations
+- [x] 23. Create reliability analysis visualizations
   - Create visualization/reliability_viz.py with plot_reliability_analysis() function
   - Implement histogram of hourly curtailment events
   - Create time series plot showing reserve margin over the year
@@ -208,14 +208,14 @@
   - Show statistics: total curtailment hours, maximum single-hour curtailment
   - _Requirements: 4.4, 4.5, 10.5_
 
-- [ ] 24. Create sensitivity tornado chart
+- [x] 24. Create sensitivity tornado chart
   - Add plot_sensitivity_tornado() function to visualization module
   - Implement horizontal bar chart showing parameter impacts on NPV
   - Sort parameters by magnitude of impact (largest at top)
   - Show both positive and negative variations
   - _Requirements: 8.1, 8.2, 8.3_
 
-- [ ] 25. Build Streamlit dashboard structure
+- [-] 25. Build Streamlit dashboard structure
   - Create dashboard/app.py as main entry point with page navigation
   - Implement sidebar with page selection: Optimization Setup, Optimal Portfolio, Hourly Dispatch, Scenario Comparison, Case Study
   - Set up session state management to persist optimization results and user inputs
