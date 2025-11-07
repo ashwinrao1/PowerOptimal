@@ -16,7 +16,7 @@
   - Save processed data to data/processed/ercot_lmp_hourly_2022_2024.csv
   - _Requirements: 6.1_
 
-- [ ] 3. Implement solar profile generation
+- [x] 3. Implement solar profile generation
   - Create solar_collector.py module with function to call NREL PVWatts API
   - Configure parameters: West Texas coordinates (31.9973°N, 102.0779°W), fixed tilt at 32°, south-facing azimuth
   - Generate 8760 hourly capacity factors for typical meteorological year
@@ -24,14 +24,14 @@
   - Save to data/processed/solar_cf_west_texas.csv
   - _Requirements: 6.2_
 
-- [ ] 4. Implement natural gas price collection
+- [x] 4. Implement natural gas price collection
   - Create gas_collector.py module to fetch daily Waha Hub prices from EIA API
   - Interpolate daily prices to hourly using 10% peak/off-peak differential pattern
   - Validate prices are non-negative and within reasonable range (0-50 $/MMBtu)
   - Save to data/processed/gas_prices_hourly.csv
   - _Requirements: 6.3_
 
-- [ ] 5. Implement grid carbon intensity collection
+- [x] 5. Implement grid carbon intensity collection
   - Create carbon_collector.py module to fetch hourly ERCOT West carbon intensity from EIA Electric Grid Monitor
   - Convert units to kg CO2/MWh if needed
   - Validate data completeness and reasonable ranges
