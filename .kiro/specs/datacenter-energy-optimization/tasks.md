@@ -1,6 +1,6 @@
 # Implementation Plan
 
-- [ ] 1. Set up project structure and configuration
+- [x] 1. Set up project structure and configuration
   - Create directory structure for data, src, tests, notebooks, dashboard, docs, and results
   - Create requirements.txt with all Python dependencies (Pyomo, Gurobi, Pandas, NumPy, Plotly, Streamlit, pytest)
   - Create .gitignore file to exclude data files, results, and virtual environment
@@ -8,7 +8,7 @@
   - Create configuration management module for storing constants and parameters
   - _Requirements: 12.1, 12.2_
 
-- [ ] 2. Implement data pipeline for ERCOT LMP collection
+- [x] 2. Implement data pipeline for ERCOT LMP collection
   - Create ercot_collector.py module with function to fetch hourly LMP data from ERCOT API
   - Implement retry logic with exponential backoff for API failures
   - Parse XML/CSV responses and extract Day-Ahead Market (DAM) and Real-Time Market (RTM) prices
