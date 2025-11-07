@@ -1,0 +1,116 @@
+{
+  "cost_reliability": {
+    "num_solutions": 5,
+    "solutions": [
+      {
+        "scenario_index": null,
+        "scenario_name": "scenario_0",
+        "is_pareto_optimal": true,
+        "total_npv": 2000000000.0,
+        "reliability_pct": 99.9,
+        "carbon_tons_annual": 150000,
+        "grid_dependence_pct": 80
+      },
+      {
+        "scenario_index": null,
+        "scenario_name": "scenario_1",
+        "is_pareto_optimal": true,
+        "total_npv": 2100000000.0,
+        "reliability_pct": 99.92,
+        "carbon_tons_annual": 145000,
+        "grid_dependence_pct": 78
+      },
+      {
+        "scenario_index": null,
+        "scenario_name": "scenario_2",
+        "is_pareto_optimal": true,
+        "total_npv": 2200000000.0,
+        "reliability_pct": 99.94000000000001,
+        "carbon_tons_annual": 140000,
+        "grid_dependence_pct": 76
+      },
+      {
+        "scenario_index": null,
+        "scenario_name": "scenario_3",
+        "is_pareto_optimal": true,
+        "total_npv": 2300000000.0,
+        "reliability_pct": 99.96000000000001,
+        "carbon_tons_annual": 135000,
+        "grid_dependence_pct": 74
+      },
+      {
+        "scenario_index": null,
+        "scenario_name": "scenario_4",
+        "is_pareto_optimal": true,
+        "total_npv": 2400000000.0,
+        "reliability_pct": 99.98,
+        "carbon_tons_annual": 130000,
+        "grid_dependence_pct": 72
+      }
+    ]
+  },
+  "cost_carbon": {
+    "num_solutions": 5,
+    "solutions": [
+      {
+        "scenario_index": null,
+        "scenario_name": "scenario_0",
+        "is_pareto_optimal": true,
+        "total_npv": 2000000000.0,
+        "carbon_tons_annual": 150000,
+        "reliability_pct": 99.9,
+        "grid_dependence_pct": 80
+      },
+      {
+        "scenario_index": null,
+        "scenario_name": "scenario_1",
+        "is_pareto_optimal": true,
+        "total_npv": 2100000000.0,
+        "carbon_tons_annual": 145000,
+        "reliability_pct": 99.92,
+        "grid_dependence_pct": 78
+      },
+      {
+        "scenario_index": null,
+        "scenario_name": "scenario_2",
+        "is_pareto_optimal": true,
+        "total_npv": 2200000000.0,
+        "carbon_tons_annual": 140000,
+        "reliability_pct": 99.94000000000001,
+        "grid_dependence_pct": 76
+      },
+      {
+        "scenario_index": null,
+        "scenario_name": "scenario_3",
+        "is_pareto_optimal": true,
+        "total_npv": 2300000000.0,
+        "carbon_tons_annual": 135000,
+        "reliability_pct": 99.96000000000001,
+        "grid_dependence_pct": 74
+      },
+      {
+        "scenario_index": null,
+        "scenario_name": "scenario_4",
+        "is_pareto_optimal": true,
+        "total_npv": 2400000000.0,
+        "carbon_tons_annual": 130000,
+        "reliability_pct": 99.98,
+        "grid_dependence_pct": 72
+      }
+    ]
+  },
+  "grid_reliability": {
+    "num_solutions": 1,
+    "solutions": [
+      {
+        "scenario_index": null,
+        "scenario_name": "scenario_4",
+        "is_pareto_optimal": true,
+        "grid_dependence_pct": 72,
+        "reliability_pct": 99.98,
+        "total_npv": 2400000000.0,
+        "carbon_tons_annual": 130000
+      }
+    ]
+  }
+}

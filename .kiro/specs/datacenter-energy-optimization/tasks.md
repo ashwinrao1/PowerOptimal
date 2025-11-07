@@ -38,14 +38,14 @@
   - Save to data/processed/grid_carbon_intensity.csv
   - _Requirements: 6.4_
 
-- [ ] 6. Create technology cost database
+- [x] 6. Create technology cost database
   - Manually compile technology costs from NREL ATB 2024 documentation
   - Create JSON structure with CAPEX and OPEX for grid, gas, battery, and solar
   - Include parameters: heat rate, efficiency, degradation costs, O&M costs
   - Save to data/tech_costs.json
   - _Requirements: 6.5_
 
-- [ ] 7. Implement data validation module
+- [x] 7. Implement data validation module
   - Create validator.py with functions to check data completeness (no more than 1% missing)
   - Validate timestamps are continuous and cover full year (8760 hours)
   - Validate values are within expected ranges for each data type
@@ -59,7 +59,7 @@
   - Test interpolation and gap-filling functions
   - _Requirements: 6.5_
 
-- [ ] 8. Create data model classes
+- [x] 8. Create data model classes
   - Create models/market_data.py with MarketData dataclass containing timestamp, lmp, gas_price, solar_cf, grid_carbon_intensity arrays
   - Implement validate() method to ensure data completeness and value ranges
   - Create models/technology.py with TechnologyCosts and FacilityParams dataclasses
@@ -67,7 +67,7 @@
   - Implement serialization methods (to_dict, to_dataframe, save, load) for solution classes
   - _Requirements: 1.2, 1.3_
 
-- [ ] 9. Build core optimization model with Pyomo
+- [x] 9. Build core optimization model with Pyomo
   - Create optimization/model_builder.py with build_optimization_model() function
   - Define decision variables: capacity variables (C_grid, C_gas, C_battery, C_solar) and hourly dispatch variables (p_grid, p_gas, p_battery, p_curtail, p_solar, SOC)
   - Implement objective function: minimize CAPEX + NPV(OPEX) + NPV(Curtailment_Penalty) with 20-year horizon and 7% discount rate
@@ -75,7 +75,7 @@
   - Calculate annual OPEX including grid electricity costs, demand charges, gas fuel costs, gas O&M, battery degradation, and solar O&M
   - _Requirements: 1.1, 1.4, 1.5_
 
-- [ ] 10. Implement optimization model constraints
+- [x] 10. Implement optimization model constraints
   - Implement energy balance constraint for all 8760 hours: grid + gas + solar - battery + curtailment = load
   - Implement capacity limit constraints: grid power ≤ grid capacity, gas power ≤ gas capacity, battery power within ±25% of capacity
   - Implement solar generation constraint: solar power = solar capacity × capacity factor
@@ -87,7 +87,7 @@
   - Implement optional carbon constraint: total emissions ≤ carbon budget when specified
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 3.2, 3.3, 3.4, 3.5, 4.1, 5.1, 5.2, 5.3, 5.4, 7.4_
 
-- [ ] 11. Implement solver interface
+- [x] 11. Implement solver interface
   - Create optimization/solver.py with solve_model() function
   - Configure Gurobi solver with MIPGap=0.005, TimeLimit=1800 seconds, automatic thread selection
   - Set solver method to barrier for LP problems
@@ -95,7 +95,7 @@
   - Return solver results and solve time
   - _Requirements: 12.1, 12.2, 12.3, 12.5_
 
-- [ ] 12. Implement solution extraction and validation
+- [x] 12. Implement solution extraction and validation
   - Create optimization/solution_extractor.py with extract_solution() function
   - Extract capacity decisions from solved model variables
   - Extract hourly dispatch decisions for all 8760 hours
@@ -114,7 +114,7 @@
   - Test solution extraction produces correct data structures
   - _Requirements: 12.1_
 
-- [ ] 13. Implement baseline grid-only scenario
+- [x] 13. Implement baseline grid-only scenario
   - Create script to run optimization with zero capacity for gas, battery, and solar
   - Only allow grid connection to meet full load
   - Calculate total cost, reliability, and carbon emissions for baseline
@@ -122,7 +122,7 @@
   - Document baseline metrics for comparison with optimal portfolio
   - _Requirements: 9.5, 11.2_
 
-- [ ] 14. Implement optimal portfolio scenario
+- [x] 14. Implement optimal portfolio scenario
   - Run optimization with all technologies available (grid, gas, battery, solar)
   - Allow optimizer to determine optimal capacity mix
   - Extract and save optimal solution to results/solutions/optimal_portfolio.json
@@ -136,7 +136,7 @@
   - Verify solution quality (objective value in expected range, no curtailment violations)
   - _Requirements: 12.1, 12.4_
 
-- [ ] 15. Implement scenario generator for sensitivity analysis
+- [x] 15. Implement scenario generator for sensitivity analysis
   - Create analysis/scenario_generator.py with generate_scenarios() function
   - Implement parameter variation logic for gas prices (±50%), grid LMPs (±30%), battery costs ($200-500/kWh)
   - Implement reliability target variations (99.9%, 99.99%, 99.999%)
@@ -144,7 +144,7 @@
   - Generate list of parameter dictionaries for all scenario combinations
   - _Requirements: 8.1, 8.2, 8.3, 8.4, 8.5_
 
-- [ ] 16. Implement batch solver for parallel scenario execution
+- [x] 16. Implement batch solver for parallel scenario execution
   - Create analysis/batch_solver.py with solve_scenarios() function
   - Use Python multiprocessing to solve independent scenarios concurrently
   - Configure number of worker processes based on available CPU cores
@@ -153,7 +153,7 @@
   - Save scenario results to results/scenario_results.csv
   - _Requirements: 8.1, 8.2, 8.3, 8.4, 8.5_
 
-- [ ] 17. Implement Pareto frontier calculator
+- [x] 17. Implement Pareto frontier calculator
   - Create analysis/pareto_calculator.py with calculate_pareto_frontier() function
   - Implement algorithm to identify non-dominated solutions for two objectives
   - Support objective pairs: cost vs reliability, cost vs carbon, grid dependence vs reliability
@@ -161,7 +161,7 @@
   - Save Pareto frontier data to results/pareto_frontiers.json
   - _Requirements: 9.4_
 
-- [ ] 18. Implement sensitivity analyzer
+- [x] 18. Implement sensitivity analyzer
   - Create analysis/sensitivity_analyzer.py with analyze_sensitivity() function
   - Calculate elasticity: percentage change in cost per percentage change in parameter
   - Identify breakeven points where optimal decisions change
@@ -169,7 +169,7 @@
   - Generate sensitivity metrics for all varied parameters
   - _Requirements: 8.1, 8.2, 8.3, 8.4, 8.5_
 
-- [ ] 19. Create capacity mix visualizations
+- [x] 19. Create capacity mix visualizations
   - Create visualization/capacity_viz.py with plot_capacity_mix() function
   - Implement stacked bar chart showing MW capacity for each technology
   - Implement pie chart showing percentage breakdown of capacity
@@ -177,7 +177,7 @@
   - Support multiple format options (bar, pie, waterfall)
   - _Requirements: 10.2_
 
-- [ ] 20. Create dispatch heatmap visualization
+- [x] 20. Create dispatch heatmap visualization
   - Create visualization/dispatch_viz.py with plot_dispatch_heatmap() function
   - Implement 2D heatmap with hours (1-8760) on x-axis and power sources on y-axis
   - Color code by MW contribution from each source
@@ -185,7 +185,7 @@
   - Support time range selection for zooming into specific periods
   - _Requirements: 10.3_
 
-- [ ] 21. Create cost breakdown visualizations
+- [-] 21. Create cost breakdown visualizations
   - Create visualization/cost_viz.py with plot_cost_breakdown() function
   - Implement waterfall chart showing CAPEX and OPEX components
   - Break down costs by technology: grid CAPEX/OPEX, gas CAPEX/OPEX, battery CAPEX/OPEX, solar CAPEX/OPEX

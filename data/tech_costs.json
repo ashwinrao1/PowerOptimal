@@ -1,0 +1,52 @@
+{
+  "grid_interconnection": {
+    "capex_per_kw": 3000,
+    "fixed_om_per_kw_year": 0,
+    "demand_charge_per_kw_month": 15,
+    "description": "Grid connection infrastructure including transformers and switchgear"
+  },
+  "gas_peaker": {
+    "capex_per_kw": 1000,
+    "variable_om_per_mwh": 15,
+    "heat_rate_mmbtu_per_mwh": 10,
+    "thermal_efficiency": 0.35,
+    "carbon_intensity_tons_per_mwh": 0.4,
+    "ramp_rate_pct_per_hour": 0.5,
+    "description": "Natural gas combustion turbine peaker plant"
+  },
+  "battery": {
+    "capex_per_kwh": 350,
+    "degradation_cost_per_mwh": 5,
+    "round_trip_efficiency": 0.85,
+    "duration_hours": 4,
+    "charge_rate_pct_capacity": 0.25,
+    "discharge_rate_pct_capacity": 0.25,
+    "min_soc_pct": 0.1,
+    "max_soc_pct": 0.9,
+    "description": "Lithium-ion battery energy storage system"
+  },
+  "solar": {
+    "capex_per_kw": 1200,
+    "fixed_om_per_kw_year": 20,
+    "tilt_angle_degrees": 32,
+    "azimuth_degrees": 180,
+    "panel_efficiency": 0.20,
+    "description": "Fixed-tilt solar PV system optimized for West Texas"
+  },
+  "financial": {
+    "planning_horizon_years": 20,
+    "discount_rate": 0.07,
+    "curtailment_penalty_per_mwh": 10000,
+    "description": "Financial parameters for NPV calculations"
+  },
+  "facility": {
+    "pue": 1.05,
+    "reliability_target_default": 0.9999,
+    "description": "Data center facility parameters"
+  },
+  "metadata": {
+    "source": "NREL ATB 2024",
+    "last_updated": "2024",
+    "notes": "Costs represent mid-case projections for 2024. Grid interconnection costs vary by location and utility. Battery costs continue to decline rapidly."
+  }
+}
