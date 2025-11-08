@@ -6,7 +6,10 @@ from typing import Dict, Optional, Union, Tuple
 import pandas as pd
 import numpy as np
 
-from ..models.solution import DispatchSolution, OptimizationSolution, SolutionMetrics
+try:
+    from ..models.solution import DispatchSolution, OptimizationSolution, SolutionMetrics
+except ImportError:
+    from models.solution import DispatchSolution, OptimizationSolution, SolutionMetrics
 
 
 def plot_reliability_analysis(

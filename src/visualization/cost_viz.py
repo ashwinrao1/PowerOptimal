@@ -4,8 +4,12 @@ import plotly.graph_objects as go
 from typing import Dict, Optional, Union
 import numpy as np
 
-from ..models.solution import OptimizationSolution, SolutionMetrics, CapacitySolution
-from ..models.technology import TechnologyCosts
+try:
+    from ..models.solution import OptimizationSolution, SolutionMetrics, CapacitySolution
+    from ..models.technology import TechnologyCosts
+except ImportError:
+    from models.solution import OptimizationSolution, SolutionMetrics, CapacitySolution
+    from models.technology import TechnologyCosts
 
 
 def plot_cost_breakdown(

@@ -5,7 +5,10 @@ import plotly.express as px
 from typing import Dict, Optional, Union
 import pandas as pd
 
-from ..models.solution import CapacitySolution, OptimizationSolution
+try:
+    from ..models.solution import CapacitySolution, OptimizationSolution
+except ImportError:
+    from models.solution import CapacitySolution, OptimizationSolution
 
 
 def plot_capacity_mix(

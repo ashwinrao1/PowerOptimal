@@ -5,7 +5,10 @@ from typing import Dict, Optional, Union, List, Any
 import pandas as pd
 import numpy as np
 
-from ..models.solution import OptimizationSolution
+try:
+    from ..models.solution import OptimizationSolution
+except ImportError:
+    from models.solution import OptimizationSolution
 
 
 def plot_pareto_frontier(

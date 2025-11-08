@@ -6,8 +6,12 @@ from typing import Dict, Optional, Union, Tuple
 import pandas as pd
 import numpy as np
 
-from ..models.solution import DispatchSolution, OptimizationSolution
-from ..models.market_data import MarketData
+try:
+    from ..models.solution import DispatchSolution, OptimizationSolution
+    from ..models.market_data import MarketData
+except ImportError:
+    from models.solution import DispatchSolution, OptimizationSolution
+    from models.market_data import MarketData
 
 
 def plot_dispatch_heatmap(
