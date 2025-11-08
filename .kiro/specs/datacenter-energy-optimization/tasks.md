@@ -215,14 +215,14 @@
   - Show both positive and negative variations
   - _Requirements: 8.1, 8.2, 8.3_
 
-- [-] 25. Build Streamlit dashboard structure
+- [x] 25. Build Streamlit dashboard structure
   - Create dashboard/app.py as main entry point with page navigation
   - Implement sidebar with page selection: Optimization Setup, Optimal Portfolio, Hourly Dispatch, Scenario Comparison, Case Study
   - Set up session state management to persist optimization results and user inputs
   - Configure page layout and theme settings
   - _Requirements: 10.1_
 
-- [ ] 26. Implement optimization setup page
+- [x] 26. Implement optimization setup page
   - Create dashboard/pages/setup.py with input widgets
   - Add sliders for facility size (100-500 MW), reliability target (99.9-99.999%), carbon reduction (0-100%)
   - Add dropdown for location selection and year scenario
@@ -232,7 +232,7 @@
   - Store results in session state when complete
   - _Requirements: 10.1_
 
-- [ ] 27. Implement optimal portfolio page
+- [x] 27. Implement optimal portfolio page
   - Create dashboard/pages/portfolio.py to display optimization results
   - Show capacity mix visualization (bar chart) using plot_capacity_mix()
   - Show cost breakdown (waterfall chart) using plot_cost_breakdown()
@@ -240,14 +240,14 @@
   - Add download button to export results to CSV/JSON
   - _Requirements: 10.2, 10.4_
 
-- [ ] 28. Implement hourly dispatch page
+- [x] 28. Implement hourly dispatch page
   - Create dashboard/pages/dispatch.py to visualize hourly operations
   - Display dispatch heatmap for full year using plot_dispatch_heatmap()
   - Add time range selector for zooming into specific weeks or days
   - Show statistics panel: gas utilization hours, battery cycles, solar capacity factor, peak grid draw
   - _Requirements: 10.3_
 
-- [ ] 29. Implement scenario comparison page
+- [x] 29. Implement scenario comparison page
   - Create dashboard/pages/scenarios.py for multi-scenario analysis
   - Add controls to configure and run multiple scenarios
   - Display Pareto frontier plots for cost vs reliability and cost vs carbon
@@ -255,7 +255,7 @@
   - Display sensitivity tornado chart
   - _Requirements: 10.5_
 
-- [ ] 30. Implement case study page
+- [x] 30. Implement case study page
   - Create dashboard/pages/case_study.py with pre-computed 300MW West Texas results
   - Display baseline (grid-only) and optimal portfolio solutions side-by-side
   - Show narrative explanation of findings and recommendations
@@ -263,7 +263,7 @@
   - Add download button for case study report
   - _Requirements: 11.1, 11.2, 11.3, 11.4, 11.5_
 
-- [ ] 31. Implement dashboard caching and performance optimization
+- [x] 31. Implement dashboard caching and performance optimization
   - Add @st.cache_data decorator to data loading functions
   - Add @st.cache_resource decorator for solver initialization
   - Implement lazy loading for visualizations (only render when page is viewed)
@@ -277,7 +277,7 @@
   - Test download functionality for results export
   - _Requirements: 10.1, 10.2, 10.3, 10.4, 10.5_
 
-- [ ] 32. Run 300MW West Texas case study analysis
+- [x] 32. Run 300MW West Texas case study analysis
   - Load ERCOT West Texas data for 2022-2024
   - Run baseline optimization with grid-only configuration
   - Run optimal portfolio optimization with all technologies available
@@ -286,7 +286,7 @@
   - Save results to results/solutions/case_study_results.json
   - _Requirements: 11.1, 11.2, 11.3, 11.4_
 
-- [ ] 33. Create case study report document
+- [x] 33. Create case study report document
   - Write docs/case_study.md with problem statement for 300MW West Texas facility
   - Document baseline scenario: costs, reliability, carbon emissions
   - Document optimal portfolio: recommended capacity mix and rationale
@@ -295,7 +295,7 @@
   - Include key visualizations: capacity mix, dispatch heatmap, cost breakdown
   - _Requirements: 11.5_
 
-- [ ] 34. Create comprehensive README documentation
+- [x] 34. Create comprehensive README documentation
   - Write project overview explaining the business problem and solution approach
   - Document setup instructions: clone repo, create virtual environment, install dependencies
   - Provide quick start guide: download data, run baseline optimization, launch dashboard
@@ -312,7 +312,7 @@
   - Compile to docs/model_formulation.pdf
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 3.2, 3.3, 3.4, 3.5, 4.1, 5.1, 5.2, 5.3, 5.4, 5.5, 7.1, 7.2, 7.3, 7.4, 7.5_
 
-- [ ] 36. Create utility scripts for common operations
+- [x] 36. Create utility scripts for common operations
   - Create scripts/download_all_data.py to automate data collection from all sources
   - Create scripts/run_baseline.py to run baseline grid-only optimization
   - Create scripts/run_scenarios.py to execute all scenario analyses

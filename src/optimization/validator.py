@@ -10,8 +10,13 @@ import numpy as np
 from typing import List, Dict, Any, Tuple
 import logging
 
-from ..models.solution import OptimizationSolution
-from ..models.technology import TechnologyCosts, FacilityParams
+# Use absolute imports to avoid issues when imported from different contexts
+try:
+    from ..models.solution import OptimizationSolution
+    from ..models.technology import TechnologyCosts, FacilityParams
+except ImportError:
+    from models.solution import OptimizationSolution
+    from models.technology import TechnologyCosts, FacilityParams
 
 logger = logging.getLogger(__name__)
 

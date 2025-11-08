@@ -58,6 +58,8 @@ Thumbs.db
 
 # Gurobi
 gurobi.log
+config/gurobi_wls.json
+config/gurobi.lic
 
 # Testing
 .pytest_cache/

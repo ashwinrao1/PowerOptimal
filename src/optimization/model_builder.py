@@ -9,8 +9,13 @@ import pyomo.environ as pyo
 from typing import Optional
 import numpy as np
 
-from ..models.market_data import MarketData
-from ..models.technology import TechnologyCosts, FacilityParams
+# Use absolute imports to avoid issues when imported from different contexts
+try:
+    from ..models.market_data import MarketData
+    from ..models.technology import TechnologyCosts, FacilityParams
+except ImportError:
+    from models.market_data import MarketData
+    from models.technology import TechnologyCosts, FacilityParams
 
 
 def build_optimization_model(

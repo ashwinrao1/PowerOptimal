@@ -10,14 +10,25 @@ import numpy as np
 from typing import Dict, Any, Optional
 import logging
 
-from ..models.solution import (
-    CapacitySolution,
-    DispatchSolution,
-    SolutionMetrics,
-    OptimizationSolution
-)
-from ..models.technology import TechnologyCosts, FacilityParams
-from ..models.market_data import MarketData
+# Use absolute imports to avoid issues when imported from different contexts
+try:
+    from ..models.solution import (
+        CapacitySolution,
+        DispatchSolution,
+        SolutionMetrics,
+        OptimizationSolution
+    )
+    from ..models.technology import TechnologyCosts, FacilityParams
+    from ..models.market_data import MarketData
+except ImportError:
+    from models.solution import (
+        CapacitySolution,
+        DispatchSolution,
+        SolutionMetrics,
+        OptimizationSolution
+    )
+    from models.technology import TechnologyCosts, FacilityParams
+    from models.market_data import MarketData
 
 logger = logging.getLogger(__name__)
 

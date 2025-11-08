@@ -13,6 +13,31 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+__all__ = [
+    'solve_model',
+    'SolverError',
+    'InfeasibleError',
+    'UnboundedError',
+    'NumericalError',
+    'TimeoutError'
+]
+
+# Set Gurobi license file location
+import os
+from pathlib import Path
+_project_root = Path(__file__).parent.parent.parent
+_license_path = _project_root / "config" / "gurobi.lic"
+if _license_path.exists():
+    os.environ['GRB_LICENSE_FILE'] = str(_license_path)
+    logger.debug(f"Using Gurobi license file: {_license_path}")
+
+# Try to load Gurobi WLS configuration (alternative to .lic file)
+try:
+    from src.optimization.gurobi_config import load_gurobi_wls_config
+    load_gurobi_wls_config()
+except Exception as e:
+    logger.debug(f"Could not load Gurobi WLS config: {e}")
+
 
 class SolverError(Exception):
     """Base exception for solver-related errors."""
